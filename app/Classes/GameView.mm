@@ -21,6 +21,14 @@ GameView::~GameView() {
     }*/
 }
 //------------------------------------------------------------------------------
+void GameView::setWindow(SIO2window *window) {
+    _sio2Window = window;
+}
+//------------------------------------------------------------------------------
+string GameView::toString() {
+    return "Object: GameView";
+}
+//------------------------------------------------------------------------------
 void GameView::load() {
     SIO2stream *sio2Stream;
     
@@ -72,9 +80,9 @@ void GameView::load() {
 }
 //------------------------------------------------------------------------------
 void GameView::frameBegin() {
-    // Render widget.
+    // Render 2D widget.
     sio2WidgetRender(_sio2WidgetBackground, _sio2Window, 0);
-    // Reset widget rendering state.
+    // Reset 2D widget rendering state.
     sio2WidgetReset();
     sio2MaterialReset();
     
@@ -89,7 +97,8 @@ void GameView::frameBegin() {
     if(_sio2Window->n_touch) {
         unsigned int i = 0;
         while(i != _sio2Window->n_touch) {
-            sio2FontPrint(_sio2Font, &pos, "Touch #%d X:%.0f Y:%.0f", i, _sio2Window->touch[i].x, _sio2Window->touch[i].y);
+            // Switch X and Y coordinates for portrait window.
+            sio2FontPrint(_sio2Font, &pos, "Touch #%d X:%.0f Y:%.0f", i, _sio2Window->touch[i].y, GenericModel::flipCoordinateX(_sio2Window->touch[i].x));
             pos.y += 16.0;
             ++i;
         }
@@ -107,13 +116,5 @@ void GameView::frameEnd() {
         sio2WindowDebugTouch(_sio2Window);
     }
     sio2WindowLeaveLandscape2D(_sio2Window);
-}
-//------------------------------------------------------------------------------
-void GameView::setWindow(SIO2window *window) {
-    _sio2Window = window;
-}
-//------------------------------------------------------------------------------
-string GameView::toString() {
-    return "Object: GameView";
 }
 //------------------------------------------------------------------------------

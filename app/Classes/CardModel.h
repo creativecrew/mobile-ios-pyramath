@@ -50,10 +50,12 @@ public:
     /// Default constructor.
     CardModel();
     /// Parameter constructor.
-    CardModel(string name, int value);
+    CardModel(unsigned int id, string name, int value);
     /// Default destructor (optionally overridden).
     virtual ~CardModel();
     
+    /// Get id.
+    unsigned int getId();
     /// Get name.
     string getName();
     /// Get state.
@@ -62,6 +64,8 @@ public:
     int getValue();
     /// Get visible.
     CardVisible getVisible();
+    /// Set id.
+    void setId(unsigned int id);
     /// Set name.
     void setName(string name);
     /// Set state.
@@ -83,6 +87,7 @@ public:
     /// To string.
     string toString();
 protected:
+    unsigned int _id;
     string _name;
     int _value;
     CardVisible _visible;

@@ -4,6 +4,7 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 DeckModel::DeckModel() {
+    _id = 0;
     _cardIndexCurrent = 0;
     _visible = true;
 }
@@ -16,7 +17,7 @@ DeckModel::DeckModel(int length) {
     // Create an object for each pointer.
     int count = 1;
     for(int i = 0;i < length;i++) {
-        _cards.push_back(new CardModel("hello", count));
+        _cards.push_back(new CardModel(i, "hello", count));
         if(count >= 10) {
             count = 1;
         } else {
@@ -45,6 +46,10 @@ CardModel * DeckModel::getCard(int index) {
     return _cards.at(index);
 }
 //------------------------------------------------------------------------------
+unsigned int DeckModel::getId() {
+    return _id;
+}
+//------------------------------------------------------------------------------
 int DeckModel::getDeckLength() {
     return _cards.size();
 }
@@ -65,6 +70,10 @@ void DeckModel::removeCard(int index) {
     CardModel *card = _cards.at(index);
     _cards.erase(_cards.begin() + index);
     delete card;
+}
+//------------------------------------------------------------------------------
+void DeckModel::setId(unsigned int id) {
+    _id = id;
 }
 //------------------------------------------------------------------------------
 void DeckModel::setPositionX(int x) {
@@ -91,6 +100,6 @@ string DeckModel::toString() {
     for(int i = 0;i < _cards.size(); i++) {
         str += _cards.at(i)->toString() + "\n";
     }
-    return "Object:DeckModel \n" + str;
+    return "Object:DeckModel Id:" + GenericModel::convertToString(_id) + "\n" + str;
 }
 //------------------------------------------------------------------------------

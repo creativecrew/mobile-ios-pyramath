@@ -8,7 +8,27 @@ GameModel::GameModel() {
     _countTurn = 0;
 }
 //------------------------------------------------------------------------------
-GameModel::~GameModel() {}
+GameModel::~GameModel() {
+    PlayerModel *player;
+    while(!_players.empty()) {
+        // Get first element.
+        player = _players.front();
+        // Remove first element from vector.
+        _players.erase(_players.begin());
+        // Delete pointer of object.
+        delete player;
+    }
+
+    DeckModel *deck;
+    while(!_decks.empty()) {
+        // Get first element.
+        deck = _decks.front();
+        // Remove first element from vector.
+        _decks.erase(_decks.begin());
+        // Delete pointer of object.
+        delete deck;
+    }
+}
 //------------------------------------------------------------------------------
 void GameModel::addDeck(DeckModel *deck) {
     _decks.push_back(deck);

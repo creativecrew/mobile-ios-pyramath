@@ -58,8 +58,12 @@ public:
     /// Default destructor (optionally overridden).
     virtual ~DeckModel();
     
+    /// Get id.
+    unsigned int getId();
     /// Get visible.
     bool getVisible();
+    /// Set id.
+    void setId(unsigned int id);
     /// Set visible.
     void setVisible(bool visible);
     
@@ -86,6 +90,7 @@ public:
     /// To string.
     string toString();
 protected:
+    unsigned int _id;
     vector<CardModel *> _cards;
     int _cardIndexCurrent;
     bool _visible;

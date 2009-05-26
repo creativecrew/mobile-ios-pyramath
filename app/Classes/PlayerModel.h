@@ -34,13 +34,19 @@ class PlayerModel : GenericModel {
 public:
     /// Default constructor.
     PlayerModel();
+    /// Parameter constructor.
+    PlayerModel(unsigned int id, string name);
     /// Default destructor (optionally overridden).
     virtual ~PlayerModel();
 
+    /// Get id.
+    unsigned int getId();
     /// Get name
     string getName();
     /// Get score.
     int getScore();
+    /// Set id.
+    void setId(unsigned int id);
     /// Set name.
     void setName(string name);
     /// Set score.
@@ -49,6 +55,7 @@ public:
     /// To string.
     string toString();
 protected:
+    unsigned int _id;
     string _name;
     int _score;
 };

@@ -9,7 +9,7 @@
     0.1
 @date
     - Created: 2009-05-21
-    - Modified: 2009-05-23
+    - Modified: 2009-05-26
     .
 @note
     References:
@@ -66,6 +66,14 @@ public:
         std::vector<char> writable(str.size() + 1);
         std::copy(str.begin(), str.end(), writable.begin());
         return &writable[0]; // Or: &*writable.begin()
+    }
+    /// Flip x coordinate for graphics (iPhone 480px: touch, accelerometer).
+    static float flipCoordinateX(float value) {
+        return 480 - value;
+    }
+    /// Flip y coordinate for graphics (iPhone 320px: touch, accelerometer).
+    static float flipCoordinateY(float value) {
+        return 320 - value;
     }
 };
 

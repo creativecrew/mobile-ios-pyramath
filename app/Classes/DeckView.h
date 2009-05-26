@@ -23,7 +23,7 @@
 #define __DeckView_H__
 
 #include "../../src/sio2/sio2.h"
-#include "GenericModel.h"
+#include "DeckModel.h"
 
 using namespace std;
 
@@ -35,9 +35,12 @@ public:
     /// Default constructor.
     DeckView();
     /// Parameter constructor.
-    DeckView(string filepath, string name);
+    DeckView(string filepath, string name, DeckModel *model);
     /// Default destructor (optionally overridden).
     virtual ~DeckView();
+    
+    // Set deck model.
+    void setDeckModel(DeckModel *model);
     
     /// Load before rendering.
     void load();
@@ -54,6 +57,7 @@ public:
 protected:
     string _filepath;
     string _name;
+    DeckModel *_deckModel;
     
     SIO2window *_sio2Window;
     

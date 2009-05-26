@@ -23,6 +23,7 @@
 #define __GameController_H__
 
 #include <iostream>
+#include <vector>
 
 #include "../../src/sio2/sio2.h"
 #include "Models.h"
@@ -56,7 +57,7 @@ protected:
     GameModel *_gameModel;
     
     GameView *_gameView;
-    CardView *_cardView;
+    vector<CardView *> _cardViews;
     
     SIO2window *_sio2Window;
 };

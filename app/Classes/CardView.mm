@@ -4,6 +4,8 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 CardView::CardView() {
+    _cardModel = NULL;
+    
     _sio2WidgetCard = NULL;
     _sio2ImageCard = NULL;
     _sio2MaterialCard = NULL;
@@ -15,12 +17,31 @@ CardView::CardView(string filepath, string name) {
     _name = name;
 }
 //------------------------------------------------------------------------------
+CardView::CardView(string filepath, string name, CardModel *model) {
+    CardView();
+    _filepath = filepath;
+    _name = name;
+    _cardModel = model;
+}
+//------------------------------------------------------------------------------
 CardView::~CardView() {
-    if(_sio2WidgetCard) {
+    /*if(_sio2WidgetCard) {
         _sio2WidgetCard = sio2WidgetFree(_sio2WidgetCard);
         _sio2MaterialCard = sio2MaterialFree(_sio2MaterialCard);
         _sio2ImageCard = sio2ImageFree(_sio2ImageCard);
-    }
+    }*/
+}
+//------------------------------------------------------------------------------
+void CardView::setCardModel(CardModel *model) {
+    _cardModel = model;
+}
+//------------------------------------------------------------------------------
+void CardView::setWindow(SIO2window *window) {
+    _sio2Window = window;
+}
+//------------------------------------------------------------------------------
+string CardView::toString() {
+    return "Object: CardView";
 }
 //------------------------------------------------------------------------------
 void CardView::load() {
@@ -52,18 +73,20 @@ void CardView::load() {
 }
 //------------------------------------------------------------------------------
 void CardView::frameBegin() {
+    if(_cardModel) {
+        // Get and set positions.
+        _sio2WidgetCard->_SIO2transform->loc->x = _cardModel->getPositionX();
+        _sio2WidgetCard->_SIO2transform->loc->y = _cardModel->getPositionY();
+    }
+    
+    // Render 2D widget.
     sio2WidgetRender(_sio2WidgetCard, _sio2Window, 0);
+    // Reset 2D widget rendering state.
+    sio2WidgetReset();
+    sio2MaterialReset();
 }
 //------------------------------------------------------------------------------
 void CardView::frameEnd() {
     
-}
-//------------------------------------------------------------------------------
-void CardView::setWindow(SIO2window *window) {
-    _sio2Window = window;
-}
-//------------------------------------------------------------------------------
-string CardView::toString() {
-    return "Object: CardView";
 }
 //------------------------------------------------------------------------------

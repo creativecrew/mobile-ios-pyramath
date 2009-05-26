@@ -23,7 +23,7 @@
 #define __CardView_H__
 
 #include "../../src/sio2/sio2.h"
-#include "GenericModel.h"
+#include "CardModel.h"
 
 using namespace std;
 
@@ -36,8 +36,13 @@ public:
     CardView();
     /// Parameter constructor.
     CardView(string filepath, string name);
+    /// Parameter constructor.
+    CardView(string filepath, string name, CardModel *model);
     /// Default destructor (optionally overridden).
     virtual ~CardView();
+    
+    // Set card model.
+    void setCardModel(CardModel *model);
     
     /// Load before rendering.
     void load();
@@ -54,6 +59,7 @@ public:
 protected:
     string _filepath;
     string _name;
+    CardModel *_cardModel;
     
     SIO2window *_sio2Window;
     

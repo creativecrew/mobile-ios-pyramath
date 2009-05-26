@@ -4,23 +4,30 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 DeckView::DeckView() {
+    _deckModel = NULL;
+
     _sio2WidgetDeck = NULL;
     _sio2ImageDeck = NULL;
     _sio2MaterialDeck = NULL;
 }
 //------------------------------------------------------------------------------
-DeckView::DeckView(string filepath, string name) {
+DeckView::DeckView(string filepath, string name, DeckModel *model) {
     DeckView();
     _filepath = filepath;
     _name = name;
+    _deckModel = model;
 }
 //------------------------------------------------------------------------------
 DeckView::~DeckView() {
-    if(_sio2WidgetDeck) {
+    /*if(_sio2WidgetDeck) {
         _sio2WidgetDeck = sio2WidgetFree(_sio2WidgetDeck);
         _sio2MaterialDeck = sio2MaterialFree(_sio2MaterialDeck);
         _sio2ImageDeck = sio2ImageFree(_sio2ImageDeck);
-    }
+    }*/
+}
+//------------------------------------------------------------------------------
+void DeckView::setDeckModel(DeckModel *model) {
+    _deckModel = model;
 }
 //------------------------------------------------------------------------------
 void DeckView::load() {
@@ -52,7 +59,15 @@ void DeckView::load() {
 }
 //------------------------------------------------------------------------------
 void DeckView::frameBegin() {
+    // Get and set positions.
+    _sio2WidgetDeck->_SIO2transform->loc->x = _deckModel->getPositionX();
+    _sio2WidgetDeck->_SIO2transform->loc->y = _deckModel->getPositionY();
+    
+    // Render 2D widget.
     sio2WidgetRender(_sio2WidgetDeck, _sio2Window, 0);
+    // Reset 2D widget rendering state.
+    sio2WidgetReset();
+    sio2MaterialReset();
 }
 //------------------------------------------------------------------------------
 void DeckView::frameEnd() {

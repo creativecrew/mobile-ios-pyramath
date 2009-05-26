@@ -4,18 +4,25 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 CardModel::CardModel() {
+    _id = 0;
     _name = "";
     _value = 0;
     _visible = CARD_VISIBLE_CLOSED;
     _state = CARD_STATE_NEW;
 }
 //------------------------------------------------------------------------------
-CardModel::CardModel(string name, int value) {
+CardModel::CardModel(unsigned int id, string name, int value) {
+    CardModel();
+    _id = id;
     _name = name;
     _value = value;
 }
 //------------------------------------------------------------------------------
 CardModel::~CardModel() {}
+//------------------------------------------------------------------------------
+unsigned int CardModel::getId() {
+    return _id;
+}
 //------------------------------------------------------------------------------
 string CardModel::getName() {
     return _name;
@@ -39,6 +46,10 @@ CardVisible CardModel::getVisible() {
 //------------------------------------------------------------------------------
 int CardModel::getValue() {
     return _value;
+}
+//------------------------------------------------------------------------------
+void CardModel::setId(unsigned int id) {
+    _id = id;
 }
 //------------------------------------------------------------------------------
 void CardModel::setName(string name) {
@@ -66,6 +77,6 @@ void CardModel::setVisible(CardVisible visible) {
 }
 //------------------------------------------------------------------------------
 string CardModel::toString() {
-    return "Object:CardModel Name:" + _name + " Value:" + GenericModel::convertToString(_value);
+    return "Object:CardModel Id:" + GenericModel::convertToString(_id) + " Name:" + _name + " Value:" + GenericModel::convertToString(_value);
 }
 //------------------------------------------------------------------------------
