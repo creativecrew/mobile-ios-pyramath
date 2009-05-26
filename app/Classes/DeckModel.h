@@ -9,7 +9,7 @@
     0.1
 @date
     - Created: 2009-05-21
-    - Modified: 2009-05-23
+    - Modified: 2009-05-26
     .
 @note
     References:
@@ -35,9 +35,9 @@
 #include <stdlib.h> // rand(), srand()
 #include <time.h> // time()
 #include <vector>
-#include <algorithm>
+#include <algorithm> // random_shuffle()
 #include "GenericModel.h"
-#include "Model.h"
+#include "Models.h"
 
 #define DECK_CARDS_MAX 52
 
@@ -57,6 +57,11 @@ public:
     DeckModel(int length);
     /// Default destructor (optionally overridden).
     virtual ~DeckModel();
+    
+    /// Get visible.
+    bool getVisible();
+    /// Set visible.
+    void setVisible(bool visible);
     
     /// Add card to deck.
     void addCard(CardModel *card);
@@ -82,6 +87,8 @@ public:
     string toString();
 protected:
     vector<CardModel *> _cards;
+    int _cardIndexCurrent;
+    bool _visible;
     
     int _positionX, _positionY;
 };

@@ -23,7 +23,9 @@
 #define __GameView_H__
 
 #include "../../src/sio2/sio2.h"
-#include "GameController.h"
+#include "GenericModel.h"
+
+using namespace std;
 
 namespace Discover {
 
@@ -48,8 +50,6 @@ public:
     /// To string.
     string toString();
 protected:
-    GameController _gameController;
-    
     SIO2window *_sio2Window;
     
     SIO2font *_sio2Font;

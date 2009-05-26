@@ -40,6 +40,8 @@ void GameView::load() {
         _sio2Font->n_char = 16;
         _sio2Font->size = 16.0;
         _sio2Font->space = 8.0;
+        
+        // Build font and store in the fast graphics memory.
         sio2FontBuild(_sio2Font);
     }
     
@@ -78,11 +80,12 @@ void GameView::frameBegin() {
     
     // Show debug information for touch.
     vec2 pos;
+    pos.x = 0.0;
     pos.y = 0.0;
     _sio2Font->_SIO2material->diffuse->x = 1.0;
     _sio2Font->_SIO2material->diffuse->y = 0.0;
     _sio2Font->_SIO2material->diffuse->z = 0.0;
-    _sio2Font->_SIO2material->diffuse->w = 1.0;			
+    _sio2Font->_SIO2material->diffuse->w = 1.0;
     if(_sio2Window->n_touch) {
         unsigned int i = 0;
         while(i != _sio2Window->n_touch) {

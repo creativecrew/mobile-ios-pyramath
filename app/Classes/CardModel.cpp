@@ -6,7 +6,7 @@ using namespace Discover;
 CardModel::CardModel() {
     _name = "";
     _value = 0;
-    _visible = true;
+    _visible = CARD_VISIBLE_CLOSED;
     _state = CARD_STATE_NEW;
 }
 //------------------------------------------------------------------------------
@@ -33,7 +33,7 @@ CardState CardModel::getState() {
     return _state;
 }
 //------------------------------------------------------------------------------
-bool CardModel::getVisible() {
+CardVisible CardModel::getVisible() {
     return _visible;
 }
 //------------------------------------------------------------------------------
@@ -61,7 +61,7 @@ void CardModel::setValue(int value) {
     _value = value;
 }
 //------------------------------------------------------------------------------
-void CardModel::setVisible(bool visible) {
+void CardModel::setVisible(CardVisible visible) {
     _visible = visible;
 }
 //------------------------------------------------------------------------------

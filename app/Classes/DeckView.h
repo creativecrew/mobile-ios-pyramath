@@ -1,6 +1,6 @@
 /**
 @file
-    GameController.h
+    DeckView.h
 @brief
     Copyright 2009 Creative Crew. All rights reserved.
 @author
@@ -8,7 +8,7 @@
 @version
     0.1
 @date
-    - Created: 2009-05-21
+    - Created: 2009-05-26
     - Modified: 2009-05-26
     .
 @note
@@ -19,28 +19,27 @@
     .
 */
 
-#ifndef __GameController_H__
-#define __GameController_H__
-
-#include <iostream>
+#ifndef __DeckView_H__
+#define __DeckView_H__
 
 #include "../../src/sio2/sio2.h"
-#include "Models.h"
-#include "GameView.h"
-#include "DeckView.h"
-#include "CardView.h"
+#include "GenericModel.h"
+
+using namespace std;
 
 namespace Discover {
 
-/** @class GameController */
-class GameController {
+/** @class DeckView */
+class DeckView {
 public:
     /// Default constructor.
-    GameController();
+    DeckView();
+    /// Parameter constructor.
+    DeckView(string filepath, string name);
     /// Default destructor (optionally overridden).
-    virtual ~GameController();
+    virtual ~DeckView();
     
-    /// Load.
+    /// Load before rendering.
     void load();
     /// Frame begin
     void frameBegin();
@@ -53,14 +52,16 @@ public:
     /// To string.
     string toString();
 protected:
-    GameModel *_gameModel;
-    
-    GameView *_gameView;
-    CardView *_cardView;
+    string _filepath;
+    string _name;
     
     SIO2window *_sio2Window;
+    
+    SIO2widget *_sio2WidgetDeck;
+    SIO2image *_sio2ImageDeck;
+    SIO2material *_sio2MaterialDeck;
 };
 
 } // END namespace Discover
 
-#endif // #ifndef __GameController_H__
+#endif // #ifndef __DeckView_H__

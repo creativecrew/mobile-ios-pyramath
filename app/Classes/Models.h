@@ -1,6 +1,6 @@
 /**
 @file
-    Model.h
+    Models.h
 @brief
     Copyright 2009 Creative Crew. All rights reserved.
 @author
@@ -9,7 +9,7 @@
     0.1
 @date
     - Created: 2009-05-21
-    - Modified: 2009-05-21
+    - Modified: 2009-05-26
     .
 @note
     References:
@@ -20,8 +20,8 @@
     .
 */
 
-#ifndef __Model_H__
-#define __Model_H__
+#ifndef __Models_H__
+#define __Models_H__
 
 #include "GameModel.h"
 #include "PlayerModel.h"
@@ -35,4 +35,4 @@
 #define MODEL_VERSION_SUFFIX "Alpha"
 #define MODEL_VERSION_NAME "Stone Age"
 
-#endif // #ifndef __Model_H__
+#endif // #ifndef __Models_H__

@@ -9,7 +9,7 @@
     0.1
 @date
     - Created: 2009-05-19
-    - Modified: 2009-05-23
+    - Modified: 2009-05-26
     .
 @note
     References:
@@ -26,11 +26,17 @@
 #define __CardModel_H__
 
 #include "GenericModel.h"
-#include "Model.h"
+#include "Models.h"
 
 using namespace std;
 
 namespace Discover {
+
+enum CardVisible {
+    CARD_VISIBLE_HIDDEN = 0,
+    CARD_VISIBLE_CLOSED = 1,
+    CARD_VISIBLE_OPENED = 2
+};
 
 enum CardState {
     CARD_STATE_TRASHED = 0,
@@ -55,7 +61,7 @@ public:
     /// Get value.
     int getValue();
     /// Get visible.
-    bool getVisible();
+    CardVisible getVisible();
     /// Set name.
     void setName(string name);
     /// Set state.
@@ -63,7 +69,7 @@ public:
     /// Set value.
     void setValue(int value);
     /// Set visible.
-    void setVisible(bool visible);
+    void setVisible(CardVisible visible);
 
     /// Get position x.
     int getPositionX();
@@ -79,7 +85,7 @@ public:
 protected:
     string _name;
     int _value;
-    bool _visible;
+    CardVisible _visible;
     CardState _state;
     
     int _positionX, _positionY;

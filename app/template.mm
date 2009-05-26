@@ -13,12 +13,10 @@
 #include "../src/sio2/sio2.h"
 
 #include "GameController.h"
-#include "GameView.h"
 
 //#define SHOW_INFO 0
 
 Discover::GameController gameController;
-Discover::GameView gameView;
 
 void templateRender( void )
 {
@@ -37,30 +35,22 @@ void templateRender( void )
     
     sio2WindowEnter2D(sio2->_SIO2window, 0.0f, 1.0f);
 	{
-        gameView.frameBegin();
+        gameController.frameBegin();
         
         /*glVertexPointer(3, GL_FLOAT, 0, squareVertices);
         glEnableClientState(GL_VERTEX_ARRAY);
         
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);*/
         
-        gameView.frameEnd();
+        gameController.frameEnd();
     }
     sio2WindowLeave2D();
 }
 
 void templateLoading( void )
 {
-    std::cout << std::endl << std::endl;
-    std::cout << "hello word" << std::endl;
-
-    gameController.createDeck();
-    gameController.getDeck()->shuffleDeck();
-    //std::cout << gameController.getDeck()->getCard(9)->toString() << std::endl;
-    //std::cout << gameController.getDeck()->toString() << std::endl;
-    
-    gameView.load();
-    gameView.setWindow(sio2->_SIO2window);
+    gameController.setWindow(sio2->_SIO2window);
+    gameController.load();
     
     // Set (render loop) pointer to function.
     sio2->_SIO2window->_SIO2windowrender = templateRender;

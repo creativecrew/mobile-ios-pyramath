@@ -4,9 +4,12 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 DeckModel::DeckModel() {
+    _cardIndexCurrent = 0;
+    _visible = true;
 }
 //------------------------------------------------------------------------------
 DeckModel::DeckModel(int length) {
+    DeckModel();
     if(length <= 0) {
         length = DECK_CARDS_MAX;
     }
@@ -54,6 +57,10 @@ int DeckModel::getPositionY() {
     return _positionY;
 }
 //------------------------------------------------------------------------------
+bool DeckModel::getVisible() {
+    return _visible;
+}
+//------------------------------------------------------------------------------
 void DeckModel::removeCard(int index) {
     CardModel *card = _cards.at(index);
     _cards.erase(_cards.begin() + index);
@@ -66,6 +73,10 @@ void DeckModel::setPositionX(int x) {
 //------------------------------------------------------------------------------
 void DeckModel::setPositionY(int y) {
     _positionY = y;
+}
+//------------------------------------------------------------------------------
+void DeckModel::setVisible(bool visible) {
+    _visible = visible;
 }
 //------------------------------------------------------------------------------
 void DeckModel::shuffleDeck() {

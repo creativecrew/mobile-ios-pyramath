@@ -9,7 +9,7 @@
     0.1
 @date
     - Created: 2009-05-21
-    - Modified: 2009-05-23
+    - Modified: 2009-05-26
     .
 @note
     References:
@@ -23,7 +23,7 @@
 #define __PlayerModel_H__
 
 #include "GenericModel.h"
-#include "Model.h"
+#include "Models.h"
 
 using namespace std;
 
@@ -37,14 +37,19 @@ public:
     /// Default destructor (optionally overridden).
     virtual ~PlayerModel();
 
+    /// Get name
+    string getName();
     /// Get score.
     int getScore();
+    /// Set name.
+    void setName(string name);
     /// Set score.
     void setScore(int score);
     
     /// To string.
     string toString();
 protected:
+    string _name;
     int _score;
 };
 
