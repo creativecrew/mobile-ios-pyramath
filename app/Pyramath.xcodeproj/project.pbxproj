@@ -16,6 +16,12 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		AF20895F0FC7EB3000A5FA2A /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = AF20895E0FC7EB3000A5FA2A /* Default.png */; };
 		AF2089610FC7EB3600A5FA2A /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF2089600FC7EB3600A5FA2A /* MainWindow.xib */; };
+		AF4481820FCB418F00008068 /* GameView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF4481800FCB418F00008068 /* GameView.mm */; };
+		AF4482780FCB693F00008068 /* background1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF4482760FCB693F00008068 /* background1.png */; };
+		AF4482790FCB693F00008068 /* card1.png in Resources */ = {isa = PBXBuildFile; fileRef = AF4482770FCB693F00008068 /* card1.png */; };
+		AF4482B40FCB79B700008068 /* CardView.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF4482B20FCB79B700008068 /* CardView.mm */; };
+		AF44844C0FCB9EF900008068 /* default16x16.tga in Resources */ = {isa = PBXBuildFile; fileRef = AF44844B0FCB9EF900008068 /* default16x16.tga */; };
+		AF44853E0FCBB6FC00008068 /* template.mm in Sources */ = {isa = PBXBuildFile; fileRef = AF44853D0FCBB6FC00008068 /* template.mm */; };
 		AFC6934F0FC40E6A005715E7 /* CardModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFC6934E0FC40E6A005715E7 /* CardModel.cpp */; };
 		AFC694050FC52581005715E7 /* GameModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFC694000FC52581005715E7 /* GameModel.cpp */; };
 		AFC694060FC52581005715E7 /* DeckModel.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AFC694010FC52581005715E7 /* DeckModel.cpp */; };
@@ -171,7 +177,6 @@
 		E0C4363D0EDBB10000B663CE /* info.c in Sources */ = {isa = PBXBuildFile; fileRef = E0C4362E0EDBB10000B663CE /* info.c */; };
 		E0C4363E0EDBB10000B663CE /* internal.c in Sources */ = {isa = PBXBuildFile; fileRef = E0C4362F0EDBB10000B663CE /* internal.c */; };
 		E0E30D6B0E5EA2FA00F6D25F /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0E30D6A0E5EA2FA00F6D25F /* OpenAL.framework */; };
-		E0E310890E5EA40200F6D25F /* template.mm in Sources */ = {isa = PBXBuildFile; fileRef = E0E310880E5EA40200F6D25F /* template.mm */; };
 		E0E312CB0E5EA54A00F6D25F /* zutil.c in Sources */ = {isa = PBXBuildFile; fileRef = E0E310E10E5EA54900F6D25F /* zutil.c */; };
 		E0E312CC0E5EA54A00F6D25F /* uncompr.c in Sources */ = {isa = PBXBuildFile; fileRef = E0E310E20E5EA54900F6D25F /* uncompr.c */; };
 		E0E312CD0E5EA54A00F6D25F /* unzip.c in Sources */ = {isa = PBXBuildFile; fileRef = E0E310E30E5EA54900F6D25F /* unzip.c */; };
@@ -324,6 +329,14 @@
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AF20895E0FC7EB3000A5FA2A /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/Default.png; sourceTree = "<group>"; };
 		AF2089600FC7EB3600A5FA2A /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainWindow.xib; path = Resources/MainWindow.xib; sourceTree = "<group>"; };
+		AF4481800FCB418F00008068 /* GameView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GameView.mm; path = Classes/GameView.mm; sourceTree = "<group>"; };
+		AF4481810FCB418F00008068 /* GameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameView.h; path = Classes/GameView.h; sourceTree = "<group>"; };
+		AF4482760FCB693F00008068 /* background1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background1.png; path = Resources/background1.png; sourceTree = "<group>"; };
+		AF4482770FCB693F00008068 /* card1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = card1.png; path = Resources/card1.png; sourceTree = "<group>"; };
+		AF4482B20FCB79B700008068 /* CardView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CardView.mm; path = Classes/CardView.mm; sourceTree = "<group>"; };
+		AF4482B30FCB79B700008068 /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardView.h; path = Classes/CardView.h; sourceTree = "<group>"; };
+		AF44844B0FCB9EF900008068 /* default16x16.tga */ = {isa = PBXFileReference; lastKnownFileType = file; name = default16x16.tga; path = Resources/default16x16.tga; sourceTree = "<group>"; };
+		AF44853D0FCBB6FC00008068 /* template.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = template.mm; sourceTree = "<group>"; };
 		AF69E0B20FC29F52007DF61E /* Pyramath.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pyramath.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AFC6934D0FC40E6A005715E7 /* CardModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CardModel.h; path = Classes/CardModel.h; sourceTree = "<group>"; };
 		AFC6934E0FC40E6A005715E7 /* CardModel.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = CardModel.cpp; path = Classes/CardModel.cpp; sourceTree = "<group>"; };
@@ -690,7 +703,6 @@
 		E0E30D6A0E5EA2FA00F6D25F /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		E0E310860E5EA3C300F6D25F /* main.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = main.h; sourceTree = "<group>"; };
 		E0E310870E5EA40200F6D25F /* template.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = template.h; sourceTree = "<group>"; };
-		E0E310880E5EA40200F6D25F /* template.mm */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; path = template.mm; sourceTree = "<group>"; };
 		E0E310DF0E5EA54900F6D25F /* zconf.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = zconf.h; path = ../src/zlib/zconf.h; sourceTree = SOURCE_ROOT; };
 		E0E310E00E5EA54900F6D25F /* zlib.h */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = zlib.h; path = ../src/zlib/zlib.h; sourceTree = SOURCE_ROOT; };
 		E0E310E10E5EA54900F6D25F /* zutil.c */ = {isa = PBXFileReference; explicitFileType = sourcecode.c.c; fileEncoding = 4; name = zutil.c; path = ../src/zlib/zutil.c; sourceTree = SOURCE_ROOT; };
@@ -947,6 +959,7 @@
 			children = (
 				AFC693380FC40DCD005715E7 /* Model Classes */,
 				AFC695EE0FC6293C005715E7 /* Controller Classes */,
+				AF44814F0FCB412100008068 /* View Classes */,
 				080E96DDFE201D6D7F000001 /* General Classes */,
 				AF69E03D0FC29CF0007DF61E /* Vendor Sources */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -963,7 +976,7 @@
 				E0E310860E5EA3C300F6D25F /* main.h */,
 				29B97316FDCFA39411CA2CEA /* main.mm */,
 				E0E310870E5EA40200F6D25F /* template.h */,
-				E0E310880E5EA40200F6D25F /* template.mm */,
+				AF44853D0FCBB6FC00008068 /* template.mm */,
 				32CA4F630368D1EE00C91783 /* template_Prefix.pch */,
 			);
 			name = "Other Sources";
@@ -972,7 +985,10 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				AF4482760FCB693F00008068 /* background1.png */,
+				AF4482770FCB693F00008068 /* card1.png */,
 				AF20895E0FC7EB3000A5FA2A /* Default.png */,
+				AF44844B0FCB9EF900008068 /* default16x16.tga */,
 				E0E313F40E5EA78B00F6D25F /* Icon.png */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 				AF2089600FC7EB3600A5FA2A /* MainWindow.xib */,
@@ -992,6 +1008,17 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF44814F0FCB412100008068 /* View Classes */ = {
+			isa = PBXGroup;
+			children = (
+				AF4482B30FCB79B700008068 /* CardView.h */,
+				AF4482B20FCB79B700008068 /* CardView.mm */,
+				AF4481810FCB418F00008068 /* GameView.h */,
+				AF4481800FCB418F00008068 /* GameView.mm */,
+			);
+			name = "View Classes";
 			sourceTree = "<group>";
 		};
 		AF69E03D0FC29CF0007DF61E /* Vendor Sources */ = {
@@ -1694,6 +1721,9 @@
 				E0E313F60E5EA78B00F6D25F /* Icon.png in Resources */,
 				AF20895F0FC7EB3000A5FA2A /* Default.png in Resources */,
 				AF2089610FC7EB3600A5FA2A /* MainWindow.xib in Resources */,
+				AF4482780FCB693F00008068 /* background1.png in Resources */,
+				AF4482790FCB693F00008068 /* card1.png in Resources */,
+				AF44844C0FCB9EF900008068 /* default16x16.tga in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1707,7 +1737,6 @@
 				1D60589B0D05DD56006BFB54 /* main.mm in Sources */,
 				1D3623260D0F684500981E51 /* templateAppDelegate.m in Sources */,
 				28FD14FE0DC6FC130079059D /* EAGLView.mm in Sources */,
-				E0E310890E5EA40200F6D25F /* template.mm in Sources */,
 				E0E312CB0E5EA54A00F6D25F /* zutil.c in Sources */,
 				E0E312CC0E5EA54A00F6D25F /* uncompr.c in Sources */,
 				E0E312CD0E5EA54A00F6D25F /* unzip.c in Sources */,
@@ -1995,6 +2024,9 @@
 				AFC694060FC52581005715E7 /* DeckModel.cpp in Sources */,
 				AFC694070FC52581005715E7 /* PlayerModel.cpp in Sources */,
 				AFC6960D0FC62974005715E7 /* GameController.cpp in Sources */,
+				AF4481820FCB418F00008068 /* GameView.mm in Sources */,
+				AF4482B40FCB79B700008068 /* CardView.mm in Sources */,
+				AF44853E0FCBB6FC00008068 /* template.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2046,6 +2078,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
@@ -2062,6 +2095,7 @@
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COMPRESS_PNG_FILES = YES;
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;

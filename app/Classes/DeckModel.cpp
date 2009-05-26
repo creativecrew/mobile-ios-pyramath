@@ -76,6 +76,10 @@ void DeckModel::shuffleDeck() {
 }
 //------------------------------------------------------------------------------
 string DeckModel::toString() {
-    return "Object: DeckModel";
+    string str = "";
+    for(int i = 0;i < _cards.size(); i++) {
+        str += _cards.at(i)->toString() + "\n";
+    }
+    return "Object:DeckModel \n" + str;
 }
 //------------------------------------------------------------------------------

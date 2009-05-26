@@ -45,14 +45,21 @@
 
 //The GL view is stored in the nib file. When it's unarchived it's sent -initWithCoder:
 - (id)initWithCoder:(NSCoder*)coder {
-
+    
 	if ((self = [super initWithCoder:coder])) {
+        
+		// Important: If you want to handle multiple
+		// touch you need to activate the necessary
+		// support. Instead only 1 touch will be 
+		// supported.
+		[ self setMultipleTouchEnabled:YES ];
+        
 		// Get the layer
 		CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
 		
 		eaglLayer.opaque = YES;
 		eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
-		   [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
+                                        [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
 		
 		context = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES1];
 		
@@ -68,15 +75,15 @@
 
 
 - (void)drawView {
-
-
+    
+    
 	if( sio2->_SIO2window->_SIO2windowrender )
 	{
 		sio2->_SIO2window->_SIO2windowrender();
-
+        
 		sio2WindowSwapBuffers( sio2->_SIO2window );
 	}
-
+    
 	
 	glBindRenderbufferOES(GL_RENDERBUFFER_OES, viewRenderbuffer);
 	[context presentRenderbuffer:GL_RENDERBUFFER_OES];
@@ -108,22 +115,24 @@
 	glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
 	glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT16_OES, backingWidth, backingHeight);
 	glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
-
-
-
+    
+    
+    
 	if( !sio2 )
 	{
 		sio2Init( &tmp_argc, tmp_argv );
 		
 		sio2InitGL();
-		
+        
+        sio2InitWidget();
+        
 		sio2->_SIO2window = sio2WindowInit();
 		
 		sio2WindowUpdateViewport( sio2->_SIO2window, 0, 0, backingWidth, backingHeight );
-
+        
 		sio2->_SIO2resource = sio2ResourceInit();
-		
-		sio2->_SIO2window->_SIO2windowrender = templateLoading;	
+        
+		sio2->_SIO2window->_SIO2windowrender = templateLoading;
 		
 		sio2WindowShutdown( sio2->_SIO2window, templateShutdown );
 		
@@ -131,11 +140,9 @@
 		sio2->_SIO2window->_SIO2windowtouchmove		= templateScreenTouchMove;
 		sio2->_SIO2window->_SIO2windowaccelerometer = templateScreenAccelerometer;
 	}
-
 	
 	return YES;
 }
-
 
 
 
@@ -149,7 +156,7 @@
 	for( touch in touches )
 	{
 		pos = [ touch locationInView:self ];
-
+        
 		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].x = pos.y;
 		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].y = pos.x;
 		
@@ -159,9 +166,9 @@
 	sio2->_SIO2window->n_tap = [ [ touches anyObject ] tapCount ];
 	
 	sio2ResourceDispatchEvents( sio2->_SIO2resource,
-								sio2->_SIO2window,
-								SIO2_WINDOW_TAP,
-								SIO2_WINDOW_TAP_DOWN );
+                               sio2->_SIO2window,
+                               SIO2_WINDOW_TAP,
+                               SIO2_WINDOW_TAP_DOWN );
 }
 
 
@@ -183,9 +190,9 @@
 	}
 	
 	sio2ResourceDispatchEvents( sio2->_SIO2resource,
-								sio2->_SIO2window,
-								SIO2_WINDOW_TOUCH_MOVE,
-								SIO2_WINDOW_TAP_DOWN );
+                               sio2->_SIO2window,
+                               SIO2_WINDOW_TOUCH_MOVE,
+                               SIO2_WINDOW_TAP_DOWN );
 }
 
 
@@ -207,9 +214,9 @@
 	}	
 	
 	sio2ResourceDispatchEvents( sio2->_SIO2resource,
-								sio2->_SIO2window,
-								SIO2_WINDOW_TAP,
-								SIO2_WINDOW_TAP_UP );
+                               sio2->_SIO2window,
+                               SIO2_WINDOW_TAP,
+                               SIO2_WINDOW_TAP_UP );
 }
 
 

@@ -23,6 +23,9 @@
     - String:
         - http://www.informit.com/guides/content.aspx?g=cplusplus&seqNum=72
         .
+    - String to Char Pointer:
+        - http://stackoverflow.com/questions/347949/convert-stdstring-to-const-char-or-char
+        .
     .
 */
 
@@ -31,6 +34,7 @@
 
 #include <string>
 #include <sstream>
+#include <vector>
 
 namespace Discover {
 
@@ -56,6 +60,12 @@ public:
         oss << t;
         str = oss.str();
         return str;
+    }
+    /// Convert string to char * (char pointer).
+    static char * convertToCharPointer(const std::string& str) {
+        std::vector<char> writable(str.size() + 1);
+        std::copy(str.begin(), str.end(), writable.begin());
+        return &writable[0]; // Or: &*writable.begin()
     }
 };
 
