@@ -53,14 +53,14 @@ void GameView::load() {
         _sio2MaterialBackground = sio2MaterialInit("background1");
         _sio2MaterialBackground->_SIO2image[SIO2_MATERIAL_CHANNEL0] = _sio2ImageBackground;
         _sio2MaterialBackground->blend = SIO2_MATERIAL_ALPHA;
-        
+
         _sio2WidgetBackground = sio2WidgetInit("background1");
         _sio2WidgetBackground->_SIO2material = _sio2MaterialBackground;
         _sio2WidgetBackground->_SIO2transform->scl->x = _sio2ImageBackground->width;
         _sio2WidgetBackground->_SIO2transform->scl->y = _sio2ImageBackground->height;
         _sio2WidgetBackground->_SIO2transform->loc->x  = 0.5;
-		_sio2WidgetBackground->_SIO2transform->loc->y  = 0.5;
-        
+        _sio2WidgetBackground->_SIO2transform->loc->y  = 0.5;
+
         // Precalculate the 2D position / scale / rotation matrix for the widget.
         sio2TransformBindMatrix(_sio2WidgetBackground->_SIO2transform);
     }
