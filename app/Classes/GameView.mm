@@ -97,8 +97,8 @@ void GameView::frameBegin() {
     if(_debug == true) {
         // Show debug information for touch.
         vec2 pos;
-        pos.x = 0.0;
-        pos.y = 0.0;
+        pos.x = 8.0;
+        pos.y = 8.0;
         _sio2Font->_SIO2material->diffuse->x = 1.0;
         _sio2Font->_SIO2material->diffuse->y = 0.0;
         _sio2Font->_SIO2material->diffuse->z = 0.0;

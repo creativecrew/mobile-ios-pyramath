@@ -47,6 +47,12 @@ void CardView::setSimulationEngine(SIO2resource *resource, SIO2window *window) {
 }
 //------------------------------------------------------------------------------
 void CardView::setCallbackTapDown(SIO2widgettapdown *fnName) {
+    _sio2WidgetCard->userdata = _cardModel;
+    _sio2WidgetCard->_SIO2widgettapdown = fnName;
+}
+//------------------------------------------------------------------------------
+void CardView::setCallbackTapDown(SIO2widgettapdown *fnName, void *objData) {
+    _sio2WidgetCard->userdata = objData;
     _sio2WidgetCard->_SIO2widgettapdown = fnName;
 }
 //------------------------------------------------------------------------------

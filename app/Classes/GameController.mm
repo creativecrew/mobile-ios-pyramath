@@ -68,8 +68,8 @@ void GameController::load() {
     CardView *cardView2 = new CardView("card1.png", "2", card2);
     cardView2->setSimulationEngine(_sio2Resource, _sio2Window);
     cardView2->load();
-    cardView2->setCallbackTapDown(GameController::onCardTapDown);
-    cardView2->setDebug(true);
+    cardView2->setCallbackTapDown(onCardTapDown);
+    cardView2->setDebug(false);
     _cardViews.push_back(cardView2);
 }
 //------------------------------------------------------------------------------

@@ -7,6 +7,9 @@ DeckModel::DeckModel() {
     _id = 0;
     _cardIndexCurrent = 0;
     _visible = DECK_VISIBLE_BACKSIDE;
+    
+    _positionX = 0;
+    _positionY = 0;
 }
 //------------------------------------------------------------------------------
 DeckModel::DeckModel(int length) {

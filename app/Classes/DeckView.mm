@@ -36,6 +36,12 @@ void DeckView::setDeckModel(DeckModel *model) {
 }
 //------------------------------------------------------------------------------
 void DeckView::setCallbackTapDown(SIO2widgettapdown *fnName) {
+    _sio2WidgetDeck->userdata = _deckModel;
+    _sio2WidgetDeck->_SIO2widgettapdown = fnName;
+}
+//------------------------------------------------------------------------------
+void DeckView::setCallbackTapDown(SIO2widgettapdown *fnName, void *objData) {
+    _sio2WidgetDeck->userdata = objData;
     _sio2WidgetDeck->_SIO2widgettapdown = fnName;
 }
 //------------------------------------------------------------------------------

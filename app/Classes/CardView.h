@@ -43,9 +43,11 @@ public:
     
     // Set card model.
     void setCardModel(CardModel *model);
-        
+    
     /// Set tap down callback. Arguments: SIO2widget, SIO2window, vec2.
     void setCallbackTapDown(SIO2widgettapdown *fnName);
+    /// Set tap down callback. Arguments: SIO2widget, SIO2window, vec2.
+    void setCallbackTapDown(SIO2widgettapdown *fnName, void *objData);
     
     /// Load before rendering.
     void load();

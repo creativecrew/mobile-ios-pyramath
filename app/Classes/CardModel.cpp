@@ -9,6 +9,9 @@ CardModel::CardModel() {
     _value = 0;
     _visible = CARD_VISIBLE_FRONTSIDE;
     _state = CARD_STATE_NEW;
+    
+    _positionX = 0;
+    _positionY = 0;
 }
 //------------------------------------------------------------------------------
 CardModel::CardModel(unsigned int id, string name, int value) {
