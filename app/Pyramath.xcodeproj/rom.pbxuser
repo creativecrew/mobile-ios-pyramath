@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* templateAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {581, 574}}";
-			sepNavSelRange = "{260, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {650, 521}}";
+			sepNavSelRange = "{227, 33}";
 			sepNavVisRange = "{0, 426}";
 		};
 	};
 	1D3623250D0F684500981E51 /* templateAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {972, 896}}";
-			sepNavSelRange = "{1888, 0}";
-			sepNavVisRange = "{632, 1265}";
+			sepNavIntBoundsRect = "{{0, 0}, {960, 1022}}";
+			sepNavSelRange = "{241, 0}";
+			sepNavVisRange = "{45, 920}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* template */ = {
@@ -24,25 +24,27 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {714, 630}}";
 			sepNavSelRange = "{96, 0}";
-			sepNavVisRange = "{0, 1050}";
+			sepNavVisRange = "{0, 1013}";
 			sepNavWindowFrame = "{{15, 0}, {889, 873}}";
 		};
 	};
 	28FD14FD0DC6FC130079059D /* EAGLView.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {918, 3626}}";
-			sepNavSelRange = "{4980, 0}";
-			sepNavVisRange = "{4645, 948}";
+			sepNavIntBoundsRect = "{{0, 0}, {914, 3836}}";
+			sepNavSelRange = "{1381, 63}";
+			sepNavVisRange = "{1201, 303}";
 			sepNavWindowFrame = "{{264, -18}, {889, 873}}";
 		};
 	};
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Release;
 		activeExecutable = E0E30D520E5EA2D100F6D25F /* template */;
-		activeSDKPreference = iphoneos2.2.1;
+		activeSDKPreference = iphonesimulator3.0;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* template */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* template */,
+		);
+		breakpoints = (
 		);
 		codeSenseManager = E0E30D5D0E5EA2D400F6D25F /* Code sense */;
 		executables = (
@@ -55,10 +57,10 @@
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
 					20,
-					222,
+					221,
 					20,
-					121,
-					121,
+					119,
+					119,
 					53,
 					20,
 				);
@@ -78,7 +80,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					432,
+					490,
 					20,
 					48,
 					43,
@@ -95,14 +97,12 @@
 					PBXFileDataSource_Target_ColumnID,
 				);
 			};
-			PBXPerProjectTemplateStateSaveDate = 259721325;
-			PBXWorkspaceStateSaveDate = 259721325;
+			PBXPerProjectTemplateStateSaveDate = 270340054;
+			PBXWorkspaceStateSaveDate = 270340054;
 		};
 		perUserProjectItems = {
-			E030C0CD0F7B08FC00FF6F26 /* PlistBookmark */ = E030C0CD0F7B08FC00FF6F26 /* PlistBookmark */;
-			E030C0CE0F7B08FC00FF6F26 /* PlistBookmark */ = E030C0CE0F7B08FC00FF6F26 /* PlistBookmark */;
-			E030C0CF0F7B08FC00FF6F26 /* PlistBookmark */ = E030C0CF0F7B08FC00FF6F26 /* PlistBookmark */;
-			E030C0D00F7B08FC00FF6F26 /* PlistBookmark */ = E030C0D00F7B08FC00FF6F26 /* PlistBookmark */;
+			E022A6F4101D0FEA00695AF1 /* PlistBookmark */ = E022A6F4101D0FEA00695AF1 /* PlistBookmark */;
+			E0B651A91017EADA00F71043 /* PlistBookmark */ = E0B651A91017EADA00F71043 /* PlistBookmark */;
 			E0E314010E5EA87E00F6D25F /* PlistBookmark */ = E0E314010E5EA87E00F6D25F /* PlistBookmark */;
 		};
 		sourceControlManager = E0E30D5C0E5EA2D400F6D25F /* Source Control */;
@@ -111,495 +111,61 @@
 	};
 	29B97316FDCFA39411CA2CEA /* main.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {581, 602}}";
-			sepNavSelRange = "{282, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {686, 521}}";
+			sepNavSelRange = "{211, 0}";
 			sepNavVisRange = "{0, 438}";
+			sepNavWindowFrame = "{{38, 48}, {667, 804}}";
 		};
 	};
-	E030C0CD0F7B08FC00FF6F26 /* PlistBookmark */ = {
+	E022A6F4101D0FEA00695AF1 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
 		fallbackIsa = PBXBookmark;
 		isK = 0;
 		kPath = (
 		);
-		name = /Users/rom/Desktop/SIO2_SDK_v1_3/template/Info.plist;
+		name = /Users/rom/Desktop/SIO2_SDK_v1_4/template/Info.plist;
 		rLen = 0;
 		rLoc = 2147483647;
 	};
-	E030C0CE0F7B08FC00FF6F26 /* PlistBookmark */ = {
+	E073A254100D3660004A0982 /* sio2_action.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {594, 2142}}";
+			sepNavSelRange = "{115, 0}";
+			sepNavVisRange = "{0, 1552}";
+		};
+	};
+	E073A266100D3660004A0982 /* sio2_lamp.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {668, 2758}}";
+			sepNavSelRange = "{5470, 20}";
+			sepNavVisRange = "{5163, 619}";
+		};
+	};
+	E073A26C100D3660004A0982 /* sio2_object.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {668, 3850}}";
+			sepNavSelRange = "{5459, 12}";
+			sepNavVisRange = "{5377, 868}";
+		};
+	};
+	E073A36A100D3690004A0982 /* btQuaternion.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1470, 5698}}";
+			sepNavSelRange = "{10451, 0}";
+			sepNavVisRange = "{9979, 849}";
+		};
+	};
+	E0B651A91017EADA00F71043 /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
 		fallbackIsa = PBXBookmark;
 		isK = 0;
 		kPath = (
 		);
-		name = /Users/rom/Desktop/SIO2_SDK_v1_3/template/Info.plist;
+		name = /Users/rom/Desktop/SIO2_SDK_v1_4/template/Info.plist;
 		rLen = 0;
 		rLoc = 2147483647;
-	};
-	E030C0CF0F7B08FC00FF6F26 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/rom/Desktop/SIO2_SDK_v1_3/template/Info.plist;
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	E030C0D00F7B08FC00FF6F26 /* PlistBookmark */ = {
-		isa = PlistBookmark;
-		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
-		fallbackIsa = PBXBookmark;
-		isK = 0;
-		kPath = (
-		);
-		name = /Users/rom/Desktop/SIO2_SDK_v1_3/template/Info.plist;
-		rLen = 0;
-		rLoc = 2147483647;
-	};
-	E05910090F4D39930068F0AE /* sio2_frame.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 1974}}";
-			sepNavSelRange = "{0, 5411}";
-			sepNavVisRange = "{0, 1848}";
-		};
-	};
-	E059100A0F4D39930068F0AE /* sio2_frame.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2086}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4495, 1183}";
-		};
-	};
-	E0C4341B0EDBAEBC00B663CE /* sio2_vertexgroup.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {618, 2856}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4745, 1192}";
-		};
-	};
-	E0C4341C0EDBAEBC00B663CE /* sio2_vertexgroup.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2394}}";
-			sepNavSelRange = "{5414, 0}";
-			sepNavVisRange = "{4998, 976}";
-		};
-	};
-	E0C4341D0EDBAEBC00B663CE /* sio2_video.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 6692}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4864, 950}";
-		};
-	};
-	E0C4341E0EDBAEBC00B663CE /* sio2_video.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3332}}";
-			sepNavSelRange = "{5414, 0}";
-			sepNavVisRange = "{5032, 906}";
-		};
-	};
-	E0C4341F0EDBAEBC00B663CE /* sio2_widget.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 4396}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4784, 1225}";
-		};
-	};
-	E0C434200EDBAEBC00B663CE /* sio2_widget.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2618}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4941, 1133}";
-		};
-	};
-	E0C434210EDBAEBC00B663CE /* sio2_window.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {714, 4564}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4864, 1198}";
-		};
-	};
-	E0C434220EDBAEBC00B663CE /* sio2_window.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {602, 3122}}";
-			sepNavSelRange = "{5414, 0}";
-			sepNavVisRange = "{4998, 781}";
-		};
-	};
-	E0C434240EDBAEBC00B663CE /* sio2.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {864, 5068}}";
-			sepNavSelRange = "{9912, 0}";
-			sepNavVisRange = "{9181, 1120}";
-		};
-	};
-	E0C434250EDBAEBC00B663CE /* sio2_physic.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {900, 11102}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4864, 1670}";
-		};
-	};
-	E0C434260EDBAEBC00B663CE /* sio2_physic.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {780, 2968}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4864, 910}";
-		};
-	};
-	E0C434270EDBAEBC00B663CE /* sio2_resource.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 35308}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4941, 1004}";
-		};
-	};
-	E0C434280EDBAEBC00B663CE /* sio2_resource.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 5152}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4864, 958}";
-		};
-	};
-	E0C434290EDBAEBC00B663CE /* sio2_script.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2800}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4745, 1121}";
-		};
-	};
-	E0C4342A0EDBAEBC00B663CE /* sio2_script.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2394}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4997, 893}";
-		};
-	};
-	E0C4342B0EDBAEBC00B663CE /* sio2_sensor.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3710}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4745, 1324}";
-		};
-	};
-	E0C4342C0EDBAEBC00B663CE /* sio2_sensor.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {624, 2464}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4864, 1159}";
-		};
-	};
-	E0C4342D0EDBAEBC00B663CE /* sio2_sound.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 5432}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4784, 1137}";
-		};
-	};
-	E0C4342E0EDBAEBC00B663CE /* sio2_sound.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2926}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 840}";
-		};
-	};
-	E0C4342F0EDBAEBC00B663CE /* sio2_soundbuffer.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {618, 3710}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 1333}";
-		};
-	};
-	E0C434300EDBAEBC00B663CE /* sio2_soundbuffer.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2520}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 876}";
-		};
-	};
-	E0C434310EDBAEBC00B663CE /* sio2_stream.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 4634}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4864, 1028}";
-		};
-	};
-	E0C434320EDBAEBC00B663CE /* sio2_stream.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2632}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 828}";
-		};
-	};
-	E0C434330EDBAEBC00B663CE /* sio2_string.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3584}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4864, 865}";
-		};
-	};
-	E0C434340EDBAEBC00B663CE /* sio2_string.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3262}}";
-			sepNavSelRange = "{5414, 0}";
-			sepNavVisRange = "{5164, 849}";
-		};
-	};
-	E0C434350EDBAEBC00B663CE /* sio2_thread.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2814}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4745, 1028}";
-		};
-	};
-	E0C434360EDBAEBC00B663CE /* sio2_thread.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2842}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 892}";
-		};
-	};
-	E0C434370EDBAEBC00B663CE /* sio2_timer.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2828}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4660, 1159}";
-		};
-	};
-	E0C434380EDBAEBC00B663CE /* sio2_timer.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2814}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5163, 695}";
-		};
-	};
-	E0C434390EDBAEBC00B663CE /* sio2_utils.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 9100}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4864, 997}";
-		};
-	};
-	E0C4343A0EDBAEBC00B663CE /* sio2_utils.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {732, 2492}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4864, 1256}";
-		};
-	};
-	E0C4343B0EDBAEBC00B663CE /* sio2_vector.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3360}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 941}";
-		};
-	};
-	E0C4343C0EDBAEBC00B663CE /* sio2_vector.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 4508}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5164, 540}";
-		};
-	};
-	E0C4343D0EDBAEBC00B663CE /* sio2_particle.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2310}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4783, 1038}";
-		};
-	};
-	E0C4343E0EDBAEBC00B663CE /* sio2_particle.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2100}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4495, 1376}";
-		};
-	};
-	E0C4343F0EDBAEBC00B663CE /* sio2_object.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 4620}}";
-			sepNavSelRange = "{5414, 0}";
-			sepNavVisRange = "{4998, 976}";
-		};
-	};
-	E0C434400EDBAEBC00B663CE /* sio2_object.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {960, 18466}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4864, 1099}";
-		};
-	};
-	E0C434410EDBAEBC00B663CE /* sio2_mist.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2646}}";
-			sepNavSelRange = "{5414, 0}";
-			sepNavVisRange = "{5031, 796}";
-		};
-	};
-	E0C434420EDBAEBC00B663CE /* sio2_mist.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2842}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4745, 1146}";
-		};
-	};
-	E0C434430EDBAEBC00B663CE /* sio2_material.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3066}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 879}";
-		};
-	};
-	E0C434440EDBAEBC00B663CE /* sio2_material.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {618, 6244}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4864, 1149}";
-		};
-	};
-	E0C434450EDBAEBC00B663CE /* sio2_lamp.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3066}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5164, 702}";
-		};
-	};
-	E0C434460EDBAEBC00B663CE /* sio2_lamp.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 5754}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4864, 1150}";
-		};
-	};
-	E0C434470EDBAEBC00B663CE /* sio2_ipocurve.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2688}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 972}";
-		};
-	};
-	E0C434480EDBAEBC00B663CE /* sio2_ipo.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2828}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5163, 690}";
-		};
-	};
-	E0C434490EDBAEBC00B663CE /* sio2_ipocurve.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {948, 3192}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{4660, 1097}";
-		};
-	};
-	E0C4344A0EDBAEBC00B663CE /* sio2_ipo.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 7168}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4716, 1147}";
-		};
-	};
-	E0C4344B0EDBAEBC00B663CE /* sio2_image.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 10542}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4864, 1063}";
-		};
-	};
-	E0C4344C0EDBAEBC00B663CE /* sio2_image.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3262}}";
-			sepNavSelRange = "{5412, 0}";
-			sepNavVisRange = "{5032, 915}";
-		};
-	};
-	E0C4344D0EDBAEBC00B663CE /* sio2_font.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2660}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5238, 756}";
-		};
-	};
-	E0C4344E0EDBAEBC00B663CE /* sio2_font.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {750, 4158}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 1092}";
-		};
-	};
-	E0C4344F0EDBAEBC00B663CE /* sio2_emitter.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {894, 2926}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 806}";
-		};
-	};
-	E0C434500EDBAEBC00B663CE /* sio2_emitter.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 4858}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 1249}";
-		};
-	};
-	E0C434510EDBAEBC00B663CE /* sio2_camera.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2828}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{4941, 910}";
-		};
-	};
-	E0C434520EDBAEBC00B663CE /* sio2_camera.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 11256}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 1218}";
-		};
-	};
-	E0C4346F0EDBAEE200B663CE /* SphereTriangleDetector.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1470, 2730}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1840}";
-		};
-	};
-	E0C434750EDBAEE200B663CE /* btVoronoiSimplexSolver.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1470, 2114}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{0, 1401}";
-		};
-	};
-	E0C434A70EDBAEE200B663CE /* btSoftBodyConcaveCollisionAlgorithm.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1470, 5026}}";
-			sepNavSelRange = "{7483, 0}";
-			sepNavVisRange = "{7195, 1398}";
-		};
-	};
-	E0C434B10EDBAEE200B663CE /* btGImpactQuantizedBvh.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1470, 7000}}";
-			sepNavSelRange = "{5020, 0}";
-			sepNavVisRange = "{4442, 1161}";
-		};
-	};
-	E0C434F30EDBAEE200B663CE /* btSoftBodyHelpers.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1470, 11620}}";
-			sepNavSelRange = "{11431, 0}";
-			sepNavVisRange = "{10847, 1458}";
-		};
-	};
-	E0C435810EDBAEE200B663CE /* btGImpactBvh.cpp */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1470, 6580}}";
-			sepNavSelRange = "{4376, 5}";
-			sepNavVisRange = "{3930, 1166}";
-		};
 	};
 	E0E30D520E5EA2D100F6D25F /* template */ = {
 		isa = PBXExecutable;
@@ -626,6 +192,8 @@
 		};
 		sourceDirectories = (
 		);
+		variableFormatDictionary = {
+		};
 	};
 	E0E30D5C0E5EA2D400F6D25F /* Source Control */ = {
 		isa = PBXSourceControlManager;
@@ -641,7 +209,7 @@
 	};
 	E0E310860E5EA3C300F6D25F /* main.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {610, 521}}";
+			sepNavIntBoundsRect = "{{0, 0}, {686, 521}}";
 			sepNavSelRange = "{223, 0}";
 			sepNavVisRange = "{0, 224}";
 		};
@@ -655,9 +223,9 @@
 	};
 	E0E310880E5EA40200F6D25F /* template.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {610, 784}}";
-			sepNavSelRange = "{365, 0}";
-			sepNavVisRange = "{145, 590}";
+			sepNavIntBoundsRect = "{{0, 0}, {650, 826}}";
+			sepNavSelRange = "{826, 0}";
+			sepNavVisRange = "{337, 489}";
 		};
 	};
 	E0E310F90E5EA54900F6D25F /* adler32.c */ = {
@@ -681,6 +249,13 @@
 			sepNavVisRange = "{0, 275}";
 		};
 	};
+	E0E311A40E5EA54900F6D25F /* jcmaster.c */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {624, 8358}}";
+			sepNavSelRange = "{301, 0}";
+			sepNavVisRange = "{0, 1030}";
+		};
+	};
 	E0E314010E5EA87E00F6D25F /* PlistBookmark */ = {
 		isa = PlistBookmark;
 		fRef = 8D1107310486CEB800E47090 /* Info.plist */;
@@ -691,33 +266,5 @@
 		name = "/Users/rom/Desktop/Silicon Dioxide/SIO2_SDK/template/Info.plist";
 		rLen = 0;
 		rLoc = 2147483647;
-	};
-	E0F6AC260F24003900DA0338 /* sio2_transform.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2562}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 972}";
-		};
-	};
-	E0F6AC270F24003900DA0338 /* sio2_transform.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3892}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 1360}";
-		};
-	};
-	E0F6AC280F24003900DA0338 /* sio2_socket.h */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 2520}}";
-			sepNavSelRange = "{5413, 0}";
-			sepNavVisRange = "{5032, 998}";
-		};
-	};
-	E0F6AC290F24003900DA0338 /* sio2_socket.cc */ = {
-		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {612, 3710}}";
-			sepNavSelRange = "{5411, 0}";
-			sepNavVisRange = "{4784, 1115}";
-		};
 	};
 }

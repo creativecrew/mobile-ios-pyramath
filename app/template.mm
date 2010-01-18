@@ -20,37 +20,24 @@ Discover::GameController gameController;
 
 void templateRender( void )
 {
-    // Vertex Array: X, Y, Z
-    /*const GLfloat squareVertices[] = {
-        100.0, 100.0, 0.0,
-        200.0, 100.0, 0.0,
-        100.0, 200.0, 0.0,
-        200.0, 200.0, 0.0
-    };*/
-    
 	glMatrixMode( GL_MODELVIEW );
 	glLoadIdentity();
     
 	glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
     
-    sio2WindowEnter2D(sio2->_SIO2window, 0.0f, 1.0f);
-	{
-        gameController.frameBegin();
-        
-        /*glVertexPointer(3, GL_FLOAT, 0, squareVertices);
-        glEnableClientState(GL_VERTEX_ARRAY);
-        
-        glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);*/
-        
-        gameController.frameEnd();
-    }
-    sio2WindowLeave2D();
+    gameController.frameBegin();
+    gameController.frameEnd();
+}
+
+void player_callback_tap_down( void *, void *, vec2 * ) {
 }
 
 void templateLoading( void )
 {
-    gameController.setWindow(sio2->_SIO2window);
+    gameController.setSimulationEngine(sio2->_SIO2resource, sio2->_SIO2window);
     gameController.load();
+    
+    //gameController._cardViews.at(0)->_sio2WidgetCard->_SIO2widgettapdown = player_callback_tap_down;
     
     // Set (render loop) pointer to function.
     sio2->_SIO2window->_SIO2windowrender = templateRender;

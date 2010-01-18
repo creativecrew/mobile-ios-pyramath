@@ -4,6 +4,8 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 GameView::GameView() {
+    _debug = false;
+    
     _sio2Font = NULL;
     _sio2ImageFont = NULL;
     _sio2MaterialFont = NULL;
@@ -21,7 +23,12 @@ GameView::~GameView() {
     }*/
 }
 //------------------------------------------------------------------------------
-void GameView::setWindow(SIO2window *window) {
+void GameView::setDebug(bool debug) {
+    _debug = debug;
+}
+//------------------------------------------------------------------------------
+void GameView::setSimulationEngine(SIO2resource *resource, SIO2window *window) {
+    _sio2Resource = resource;
     _sio2Window = window;
 }
 //------------------------------------------------------------------------------
@@ -41,7 +48,7 @@ void GameView::load() {
         
         _sio2MaterialFont = sio2MaterialInit("default16x16");
         _sio2MaterialFont->_SIO2image[SIO2_MATERIAL_CHANNEL0] = _sio2ImageFont;
-        _sio2MaterialFont->blend = SIO2_MATERIAL_ALPHA;
+        _sio2MaterialFont->blend = SIO2_MATERIAL_COLOR;
         
         _sio2Font = sio2FontInit("default16x16");
         _sio2Font->_SIO2material = _sio2MaterialFont;
@@ -62,7 +69,7 @@ void GameView::load() {
 
         _sio2MaterialBackground = sio2MaterialInit("background1");
         _sio2MaterialBackground->_SIO2image[SIO2_MATERIAL_CHANNEL0] = _sio2ImageBackground;
-        _sio2MaterialBackground->blend = SIO2_MATERIAL_ALPHA;
+        _sio2MaterialBackground->blend = SIO2_MATERIAL_COLOR;
 
         _sio2WidgetBackground = sio2WidgetInit("background1");
         _sio2WidgetBackground->_SIO2material = _sio2MaterialBackground;
@@ -81,39 +88,49 @@ void GameView::load() {
 //------------------------------------------------------------------------------
 void GameView::frameBegin() {
     // Render 2D widget.
-    sio2WidgetRender(_sio2WidgetBackground, _sio2Window, 0);
+    sio2WidgetRender(_sio2WidgetBackground, _sio2Window, 1);
     // Reset 2D widget rendering state.
     sio2WidgetReset();
     sio2MaterialReset();
     
-    // Show debug information for touch.
-    vec2 pos;
-    pos.x = 0.0;
-    pos.y = 0.0;
-    _sio2Font->_SIO2material->diffuse->x = 1.0;
-    _sio2Font->_SIO2material->diffuse->y = 0.0;
-    _sio2Font->_SIO2material->diffuse->z = 0.0;
-    _sio2Font->_SIO2material->diffuse->w = 1.0;
-    if(_sio2Window->n_touch) {
-        unsigned int i = 0;
-        while(i != _sio2Window->n_touch) {
-            // Switch X and Y coordinates for portrait window.
-            sio2FontPrint(_sio2Font, &pos, "Touch #%d X:%.0f Y:%.0f", i, _sio2Window->touch[i].y, GenericModel::flipCoordinateX(_sio2Window->touch[i].x));
-            pos.y += 16.0;
-            ++i;
+    // Debug.
+    if(_debug == true) {
+        // Show debug information for touch.
+        vec2 pos;
+        pos.x = 0.0;
+        pos.y = 0.0;
+        _sio2Font->_SIO2material->diffuse->x = 1.0;
+        _sio2Font->_SIO2material->diffuse->y = 0.0;
+        _sio2Font->_SIO2material->diffuse->z = 0.0;
+        _sio2Font->_SIO2material->diffuse->w = 1.0;
+        if(_sio2Window->n_touch) {
+            unsigned int i = 0;
+            while(i != _sio2Window->n_touch) {
+                _sio2Font->_SIO2transform->loc->x = pos.x;
+                _sio2Font->_SIO2transform->loc->y = pos.y;
+                // Switch X and Y coordinates for portrait window.
+                //sio2FontPrint(_sio2Font, &pos, "Touch #%d X:%.0f Y:%.0f", i, _sio2Window->touch[i]->y, GenericModel::flipCoordinateX(_sio2Window->touch[i].x));
+                // Default.
+                sio2FontPrint(_sio2Font, SIO2_TRANSFORM_MATRIX_APPLY, "Touch #%d X:%.0f Y:%.0f", i, _sio2Window->touch[i]->x, _sio2Window->touch[i]->y);
+                pos.y += 16.0;
+                ++i;
+            }
+            sio2MaterialReset();
         }
+        sio2FontReset();
         sio2MaterialReset();
     }
-    sio2FontReset();
-    sio2MaterialReset();
 }
 //------------------------------------------------------------------------------
 void GameView::frameEnd() {
     sio2WindowEnterLandscape2D(_sio2Window);
     {
-        // Show debug point for touch.
-        sio2ObjectReset();
-        sio2WindowDebugTouch(_sio2Window);
+        // Debug.
+        if(_debug == true) {
+            // Show debug point for touch.
+            sio2ObjectReset();
+            sio2WindowDebugTouch(_sio2Window);
+        }
     }
     sio2WindowLeaveLandscape2D(_sio2Window);
 }

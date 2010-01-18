@@ -2,7 +2,7 @@
 @file
     CardModel.h
 @brief
-    Copyright 2009 Creative Crew. All rights reserved.
+    Copyright 2010 Creative Crew. All rights reserved.
 @author
     William Chang
 @version
@@ -34,8 +34,8 @@ namespace Discover {
 
 enum CardVisible {
     CARD_VISIBLE_HIDDEN = 0,
-    CARD_VISIBLE_CLOSED = 1,
-    CARD_VISIBLE_OPENED = 2
+    CARD_VISIBLE_BACKSIDE = 1,
+    CARD_VISIBLE_FRONTSIDE = 2
 };
 
 enum CardState {
@@ -76,13 +76,13 @@ public:
     void setVisible(CardVisible visible);
 
     /// Get position x.
-    int getPositionX();
+    float getPositionX();
     /// Get position y.
-    int getPositionY();
+    float getPositionY();
     /// Set position x.
-    void setPositionX(int x);
+    void setPositionX(float x);
     /// Set position y.
-    void setPositionY(int y);
+    void setPositionY(float y);
     
     /// To string.
     string toString();
@@ -93,7 +93,7 @@ protected:
     CardVisible _visible;
     CardState _state;
     
-    int _positionX, _positionY;
+    float _positionX, _positionY;
 };
 
 } // END namespace Discover

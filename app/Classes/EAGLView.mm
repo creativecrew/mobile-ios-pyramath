@@ -52,7 +52,7 @@
 		// touch you need to activate the necessary
 		// support. Instead only 1 touch will be 
 		// supported.
-		[ self setMultipleTouchEnabled:YES ];
+		[self setMultipleTouchEnabled:YES];
         
 		// Get the layer
 		CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
@@ -130,7 +130,7 @@
 		
 		sio2WindowUpdateViewport( sio2->_SIO2window, 0, 0, backingWidth, backingHeight );
         
-		sio2->_SIO2resource = sio2ResourceInit();
+		sio2->_SIO2resource = sio2ResourceInit( "default" );
         
 		sio2->_SIO2window->_SIO2windowrender = templateLoading;
 		
@@ -157,8 +157,8 @@
 	{
 		pos = [ touch locationInView:self ];
         
-		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].x = pos.y;
-		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].y = pos.x;
+		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ]->x = pos.y;
+		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ]->y = pos.x;
 		
 		++sio2->_SIO2window->n_touch;
 	}		
@@ -183,8 +183,8 @@
 	{
 		pos = [ touch locationInView:self ];
 		
-		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].x = pos.y;
-		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].y = pos.x;
+		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ]->x = pos.y;
+		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ]->y = pos.x;
 		
 		++sio2->_SIO2window->n_touch;
 	}
@@ -207,8 +207,8 @@
 	{
 		pos = [ touch locationInView:self ];
 		
-		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].x = pos.y;
-		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ].y = pos.x;
+		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ]->x = pos.y;
+		sio2->_SIO2window->touch[ sio2->_SIO2window->n_touch ]->y = pos.x;
 		
 		++sio2->_SIO2window->n_touch;
 	}	

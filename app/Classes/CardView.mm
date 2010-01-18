@@ -4,6 +4,7 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 CardView::CardView() {
+    _debug = false;
     _cardModel = NULL;
     
     _sio2WidgetCard = NULL;
@@ -36,8 +37,17 @@ void CardView::setCardModel(CardModel *model) {
     _cardModel = model;
 }
 //------------------------------------------------------------------------------
-void CardView::setWindow(SIO2window *window) {
+void CardView::setDebug(bool debug) {
+    _debug = debug;
+}
+//------------------------------------------------------------------------------
+void CardView::setSimulationEngine(SIO2resource *resource, SIO2window *window) {
+    _sio2Resource = resource;
     _sio2Window = window;
+}
+//------------------------------------------------------------------------------
+void CardView::setCallbackTapDown(SIO2widgettapdown *fnName) {
+    _sio2WidgetCard->_SIO2widgettapdown = fnName;
 }
 //------------------------------------------------------------------------------
 string CardView::toString() {
@@ -56,17 +66,25 @@ void CardView::load() {
 
         _sio2MaterialCard = sio2MaterialInit(GenericModel::convertToCharPointer(_name));
         _sio2MaterialCard->_SIO2image[SIO2_MATERIAL_CHANNEL0] = _sio2ImageCard;
-        _sio2MaterialCard->blend = SIO2_MATERIAL_ALPHA;
+        _sio2MaterialCard->blend = SIO2_MATERIAL_COLOR;
 
         _sio2WidgetCard = sio2WidgetInit(GenericModel::convertToCharPointer(_name));
         _sio2WidgetCard->_SIO2material = _sio2MaterialCard;
         _sio2WidgetCard->_SIO2transform->scl->x = _sio2ImageCard->width;
         _sio2WidgetCard->_SIO2transform->scl->y = _sio2ImageCard->height;
-
+        _sio2WidgetCard->_SIO2transform->loc->x = 0.0;
+        _sio2WidgetCard->_SIO2transform->loc->y = 0.0;
+        
+        // Set event boundary.
+        _sio2WidgetCard->area->x = _sio2ImageCard->width - 20.0;
+        _sio2WidgetCard->area->y = _sio2ImageCard->height;
+        
         // Enable the necessary widget states
         sio2EnableState(&_sio2WidgetCard->flags,
-            SIO2_WIDGET_VISIBLE
+            SIO2_WIDGET_VISIBLE |
+            SIO2_WIDGET_ENABLED
         );
+
         // Precalculate the 2D position / scale / rotation matrix for the widget.
         sio2TransformBindMatrix(_sio2WidgetCard->_SIO2transform);
     }
@@ -77,13 +95,32 @@ void CardView::frameBegin() {
         // Get and set positions.
         _sio2WidgetCard->_SIO2transform->loc->x = _cardModel->getPositionX();
         _sio2WidgetCard->_SIO2transform->loc->y = _cardModel->getPositionY();
+        // Recalculate the new matrix.
+        sio2TransformBindMatrix(_sio2WidgetCard->_SIO2transform);
     }
     
     // Render 2D widget.
-    sio2WidgetRender(_sio2WidgetCard, _sio2Window, 0);
+    sio2WindowEnterLandscape2D(_sio2Window);
+    {
+        sio2WidgetRender(_sio2WidgetCard, _sio2Window, 1);
+    }
+    sio2WindowLeaveLandscape2D(_sio2Window);
     // Reset 2D widget rendering state.
     sio2WidgetReset();
     sio2MaterialReset();
+    
+    // Update widget's event boundary.
+    sio2ResourceUpdateAllWidgetBoundaries(_sio2Resource, _sio2Window);
+    
+    // Debug.
+    if(_debug == true) {
+        // Display the "responsive" area of a widget.
+        sio2WindowEnterLandscape2D(_sio2Window);
+        {
+            sio2WidgetDebug(_sio2WidgetCard);
+        }
+        sio2WindowLeaveLandscape2D(_sio2Window);
+    }
 }
 //------------------------------------------------------------------------------
 void CardView::frameEnd() {

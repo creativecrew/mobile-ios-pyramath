@@ -19,7 +19,10 @@
 	glView.animationInterval = 1.0 / 60.0;
 	[glView startAnimation];
 	
-	[ [UIApplication sharedApplication] setIdleTimerDisabled:NO ];
+	[[UIApplication sharedApplication] setIdleTimerDisabled:NO];
+    
+    //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationLandscapeRight animated:NO];
+    //[[UIApplication sharedApplication] setStatusBarOrientation:UIInterfaceOrientationPortrait animated:NO];
 
     [[UIAccelerometer sharedAccelerometer] setUpdateInterval:( 1.0f / 30.0f )];
     [[UIAccelerometer sharedAccelerometer] setDelegate:self];		

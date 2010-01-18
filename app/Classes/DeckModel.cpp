@@ -6,7 +6,7 @@ using namespace Discover;
 DeckModel::DeckModel() {
     _id = 0;
     _cardIndexCurrent = 0;
-    _visible = true;
+    _visible = DECK_VISIBLE_BACKSIDE;
 }
 //------------------------------------------------------------------------------
 DeckModel::DeckModel(int length) {
@@ -54,15 +54,15 @@ int DeckModel::getDeckLength() {
     return _cards.size();
 }
 //------------------------------------------------------------------------------
-int DeckModel::getPositionX() {
+float DeckModel::getPositionX() {
     return _positionX;
 }
 //------------------------------------------------------------------------------
-int DeckModel::getPositionY() {
+float DeckModel::getPositionY() {
     return _positionY;
 }
 //------------------------------------------------------------------------------
-bool DeckModel::getVisible() {
+DeckVisible DeckModel::getVisible() {
     return _visible;
 }
 //------------------------------------------------------------------------------
@@ -76,15 +76,15 @@ void DeckModel::setId(unsigned int id) {
     _id = id;
 }
 //------------------------------------------------------------------------------
-void DeckModel::setPositionX(int x) {
+void DeckModel::setPositionX(float x) {
     _positionX = x;
 }
 //------------------------------------------------------------------------------
-void DeckModel::setPositionY(int y) {
+void DeckModel::setPositionY(float y) {
     _positionY = y;
 }
 //------------------------------------------------------------------------------
-void DeckModel::setVisible(bool visible) {
+void DeckModel::setVisible(DeckVisible visible) {
     _visible = visible;
 }
 //------------------------------------------------------------------------------

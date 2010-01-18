@@ -2,14 +2,14 @@
 @file
     GameView.h
 @brief
-    Copyright 2009 Creative Crew. All rights reserved.
+    Copyright 2010 Creative Crew. All rights reserved.
 @author
     William Chang
 @version
     0.1
 @date
     - Created: 2009-05-25
-    - Modified: 2009-05-26
+    - Modified: 2010-01-18
     .
 @note
     References:
@@ -44,12 +44,17 @@ public:
     /// Frame end.
     void frameEnd();
     
-    /// Set graphics window.
-    void setWindow(SIO2window *window);
+    /// Set graphics engine.
+    void setSimulationEngine(SIO2resource *resource, SIO2window *window);
     
+    /// Set debug.
+    void setDebug(bool debug);
     /// To string.
     string toString();
 protected:
+    bool _debug;
+    
+    SIO2resource *_sio2Resource;
     SIO2window *_sio2Window;
     
     SIO2font *_sio2Font;

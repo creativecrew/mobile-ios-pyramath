@@ -2,14 +2,14 @@
 @file
     DeckView.h
 @brief
-    Copyright 2009 Creative Crew. All rights reserved.
+    Copyright 2010 Creative Crew. All rights reserved.
 @author
     William Chang
 @version
     0.1
 @date
     - Created: 2009-05-26
-    - Modified: 2009-05-26
+    - Modified: 2010-01-18
     .
 @note
     References:
@@ -42,6 +42,9 @@ public:
     // Set deck model.
     void setDeckModel(DeckModel *model);
     
+    /// Set tap down callback. Arguments: SIO2widget, SIO2window, vec2.
+    void setCallbackTapDown(SIO2widgettapdown *fnName);
+
     /// Load before rendering.
     void load();
     /// Frame begin
@@ -49,16 +52,20 @@ public:
     /// Frame end.
     void frameEnd();
     
-    /// Set graphics window.
-    void setWindow(SIO2window *window);
+    /// Set graphics engine.
+    void setSimulationEngine(SIO2resource *resource, SIO2window *window);
     
+    /// Set debug.
+    void setDebug(bool debug);
     /// To string.
     string toString();
 protected:
     string _filepath;
     string _name;
+    bool _debug;
     DeckModel *_deckModel;
     
+    SIO2resource *_sio2Resource;
     SIO2window *_sio2Window;
     
     SIO2widget *_sio2WidgetDeck;

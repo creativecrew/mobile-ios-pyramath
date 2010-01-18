@@ -2,14 +2,14 @@
 @file
     GameController.h
 @brief
-    Copyright 2009 Creative Crew. All rights reserved.
+    Copyright 2010 Creative Crew. All rights reserved.
 @author
     William Chang
 @version
     0.1
 @date
     - Created: 2009-05-21
-    - Modified: 2009-05-26
+    - Modified: 2010-01-18
     .
 @note
     References:
@@ -31,6 +31,8 @@
 #include "DeckView.h"
 #include "CardView.h"
 
+//void onCardTapDown(void *, void *, vec2 *);
+
 namespace Discover {
 
 /** @class GameController */
@@ -40,7 +42,7 @@ public:
     GameController();
     /// Default destructor (optionally overridden).
     virtual ~GameController();
-    
+        
     /// Load.
     void load();
     /// Frame begin
@@ -48,19 +50,27 @@ public:
     /// Frame end.
     void frameEnd();
     
-    /// Set graphics window.
-    void setWindow(SIO2window *window);
+    /// On event, card tap down.
+    static void onCardTapDown(void *obj1, void *obj2, vec2 *position);
+    
+    /// Set simulation engine.
+    void setSimulationEngine(SIO2resource *resource, SIO2window *window);
     
     /// To string.
     string toString();
+
+    vector<CardView *> _cardViews;
 protected:
     GameModel *_gameModel;
     
     GameView *_gameView;
-    vector<CardView *> _cardViews;
+
     
+    SIO2resource *_sio2Resource;
     SIO2window *_sio2Window;
+    SIO2widgettapdown *_sio2WidgetCallbackCardTapDown;
 };
+
 
 } // END namespace Discover
 

@@ -2,7 +2,7 @@
 @file
     DeckModel.h
 @brief
-    Copyright 2009 Creative Crew. All rights reserved.
+    Copyright 2010 Creative Crew. All rights reserved.
 @author
     William Chang
 @version
@@ -47,7 +47,13 @@ namespace Discover {
 
 // Forward declaration.
 class CardModel;
-    
+
+enum DeckVisible {
+    DECK_VISIBLE_HIDDEN = 0,
+    DECK_VISIBLE_BACKSIDE = 1,
+    DECK_VISIBLE_FRONTSIDE = 2
+};
+
 /** @class DeckModel */
 class DeckModel : GenericModel {
 public:
@@ -61,11 +67,11 @@ public:
     /// Get id.
     unsigned int getId();
     /// Get visible.
-    bool getVisible();
+    DeckVisible getVisible();
     /// Set id.
     void setId(unsigned int id);
     /// Set visible.
-    void setVisible(bool visible);
+    void setVisible(DeckVisible visible);
     
     /// Add card to deck.
     void addCard(CardModel *card);
@@ -79,13 +85,13 @@ public:
     void shuffleDeck();
     
     /// Get position x.
-    int getPositionX();
+    float getPositionX();
     /// Get position y.
-    int getPositionY();
+    float getPositionY();
     /// Set position x.
-    void setPositionX(int x);
+    void setPositionX(float x);
     /// Set position y.
-    void setPositionY(int y);
+    void setPositionY(float y);
     
     /// To string.
     string toString();
@@ -93,9 +99,9 @@ protected:
     unsigned int _id;
     vector<CardModel *> _cards;
     int _cardIndexCurrent;
-    bool _visible;
+    DeckVisible _visible;
     
-    int _positionX, _positionY;
+    float _positionX, _positionY;
 };
 
 } // END namespace Discover

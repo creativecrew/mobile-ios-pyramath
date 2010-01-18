@@ -7,7 +7,7 @@ CardModel::CardModel() {
     _id = 0;
     _name = "";
     _value = 0;
-    _visible = CARD_VISIBLE_CLOSED;
+    _visible = CARD_VISIBLE_FRONTSIDE;
     _state = CARD_STATE_NEW;
 }
 //------------------------------------------------------------------------------
@@ -28,11 +28,11 @@ string CardModel::getName() {
     return _name;
 }
 //------------------------------------------------------------------------------
-int CardModel::getPositionX() {
+float CardModel::getPositionX() {
     return _positionX;
 }
 //------------------------------------------------------------------------------
-int CardModel::getPositionY() {
+float CardModel::getPositionY() {
     return _positionY;
 }
 //------------------------------------------------------------------------------
@@ -56,11 +56,11 @@ void CardModel::setName(string name) {
     _name = name;
 }
 //------------------------------------------------------------------------------
-void CardModel::setPositionX(int x) {
+void CardModel::setPositionX(float x) {
     _positionX = x;
 }
 //------------------------------------------------------------------------------
-void CardModel::setPositionY(int y) {
+void CardModel::setPositionY(float y) {
     _positionY = y;
 }
 //------------------------------------------------------------------------------

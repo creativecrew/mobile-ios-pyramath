@@ -4,6 +4,7 @@ using namespace Discover;
 
 //------------------------------------------------------------------------------
 DeckView::DeckView() {
+    _debug = false;
     _deckModel = NULL;
 
     _sio2WidgetDeck = NULL;
@@ -26,8 +27,25 @@ DeckView::~DeckView() {
     }*/
 }
 //------------------------------------------------------------------------------
+void DeckView::setDebug(bool debug) {
+    _debug = debug;
+}
+//------------------------------------------------------------------------------
 void DeckView::setDeckModel(DeckModel *model) {
     _deckModel = model;
+}
+//------------------------------------------------------------------------------
+void DeckView::setCallbackTapDown(SIO2widgettapdown *fnName) {
+    _sio2WidgetDeck->_SIO2widgettapdown = fnName;
+}
+//------------------------------------------------------------------------------
+void DeckView::setSimulationEngine(SIO2resource *resource, SIO2window *window) {
+    _sio2Resource = resource;
+    _sio2Window = window;
+}
+//------------------------------------------------------------------------------
+string DeckView::toString() {
+    return "Object: DeckView";
 }
 //------------------------------------------------------------------------------
 void DeckView::load() {
@@ -42,26 +60,38 @@ void DeckView::load() {
 
         _sio2MaterialDeck = sio2MaterialInit(GenericModel::convertToCharPointer(_name));
         _sio2MaterialDeck->_SIO2image[SIO2_MATERIAL_CHANNEL0] = _sio2ImageDeck;
-        _sio2MaterialDeck->blend = SIO2_MATERIAL_ALPHA;
+        _sio2MaterialDeck->blend = SIO2_MATERIAL_COLOR;
 
         _sio2WidgetDeck = sio2WidgetInit(GenericModel::convertToCharPointer(_name));
         _sio2WidgetDeck->_SIO2material = _sio2MaterialDeck;
         _sio2WidgetDeck->_SIO2transform->scl->x = _sio2ImageDeck->width;
         _sio2WidgetDeck->_SIO2transform->scl->y = _sio2ImageDeck->height;
+        _sio2WidgetDeck->_SIO2transform->loc->x = 0.0;
+        _sio2WidgetDeck->_SIO2transform->loc->y = 0.0;
 
+        // Set event boundary.
+        _sio2WidgetDeck->area->x = _sio2ImageDeck->width - 20.0;
+        _sio2WidgetDeck->area->y = _sio2ImageDeck->height;
+        
         // Enable the necessary widget states
         sio2EnableState(&_sio2WidgetDeck->flags,
-            SIO2_WIDGET_VISIBLE
+            SIO2_WIDGET_VISIBLE |
+            SIO2_WIDGET_ENABLED
         );
+
         // Precalculate the 2D position / scale / rotation matrix for the widget.
         sio2TransformBindMatrix(_sio2WidgetDeck->_SIO2transform);
     }
 }
 //------------------------------------------------------------------------------
 void DeckView::frameBegin() {
-    // Get and set positions.
-    _sio2WidgetDeck->_SIO2transform->loc->x = _deckModel->getPositionX();
-    _sio2WidgetDeck->_SIO2transform->loc->y = _deckModel->getPositionY();
+    if(_deckModel) {
+        // Get and set positions.
+        _sio2WidgetDeck->_SIO2transform->loc->x = _deckModel->getPositionX();
+        _sio2WidgetDeck->_SIO2transform->loc->y = _deckModel->getPositionY();
+        // Recalculate the new matrix.
+        sio2TransformBindMatrix(_sio2WidgetDeck->_SIO2transform);
+    }
     
     // Render 2D widget.
     sio2WidgetRender(_sio2WidgetDeck, _sio2Window, 0);
@@ -72,13 +102,5 @@ void DeckView::frameBegin() {
 //------------------------------------------------------------------------------
 void DeckView::frameEnd() {
     
-}
-//------------------------------------------------------------------------------
-void DeckView::setWindow(SIO2window *window) {
-    _sio2Window = window;
-}
-//------------------------------------------------------------------------------
-string DeckView::toString() {
-    return "Object: DeckView";
 }
 //------------------------------------------------------------------------------
