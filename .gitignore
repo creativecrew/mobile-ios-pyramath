@@ -1,0 +1,3 @@
+# Set certain folders/files or patterns to be ignored.
+app/build/
+src/*
