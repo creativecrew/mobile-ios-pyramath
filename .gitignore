@@ -1,3 +1,4 @@
 # Set certain folders/files or patterns to be ignored.
 */build/
+.svn/
 .DS_Store
