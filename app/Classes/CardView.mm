@@ -106,6 +106,9 @@ void CardView::frameBegin() {
     }
     
     // Render 2D widget.
+    sio2WindowEnter2D(_sio2Window, 0.0, 1.0);
+	{
+    
     sio2WindowEnterLandscape2D(_sio2Window);
     {
         sio2WidgetRender(_sio2WidgetCard, _sio2Window, 1);
@@ -127,9 +130,15 @@ void CardView::frameBegin() {
         }
         sio2WindowLeaveLandscape2D(_sio2Window);
     }
+        
+    }
+    sio2WindowLeave2D();
 }
 //------------------------------------------------------------------------------
 void CardView::frameEnd() {
-    
+    sio2WindowEnter2D(_sio2Window, 0.0, 1.0);
+	{
+    }
+    sio2WindowLeave2D();
 }
 //------------------------------------------------------------------------------

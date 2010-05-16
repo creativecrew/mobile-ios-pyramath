@@ -9,7 +9,7 @@
     0.1
 @date
     - Created: 2009-05-21
-    - Modified: 2010-01-18
+    - Modified: 2010-02-07
     .
 @note
     References:
@@ -31,8 +31,6 @@
 #include "DeckView.h"
 #include "CardView.h"
 
-//void onCardTapDown(void *, void *, vec2 *);
-
 namespace Discover {
 
 /** @class GameController */
@@ -44,7 +42,7 @@ public:
     virtual ~GameController();
         
     /// Load.
-    void load();
+    bool load();
     /// Frame begin
     void frameBegin();
     /// Frame end.
@@ -54,20 +52,24 @@ public:
     static void onCardTapDown(void *obj1, void *obj2, vec2 *position);
     
     /// Set simulation engine.
-    void setSimulationEngine(SIO2resource *resource, SIO2window *window);
+    void setSimulationEngine(SIO2 *sio2Base);
     
     /// To string.
     string toString();
 
     vector<CardView *> _cardViews;
 protected:
+    bool _hasResource;
+    
     GameModel *_gameModel;
     
     GameView *_gameView;
 
-    
-    SIO2resource *_sio2Resource;
+    SIO2 *_sio2Base;
     SIO2window *_sio2Window;
+    SIO2resource *_sio2Resource;
+    SIO2camera *_sio2Camera;
+    
     SIO2widgettapdown *_sio2WidgetCallbackCardTapDown;
 };
 

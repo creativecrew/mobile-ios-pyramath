@@ -120,22 +120,81 @@
     
 	if( !sio2 )
 	{
+		// As 10 million things can go wrong in a program,
+		// SIO2 provide an easy way to debug the OPENGL and OPENAL,
+		// in order to enable/disable theses debugging functionalities 
+		// comment / uncomment the following defined in sio2.h
+		//
+		// #define SIO2_DEBUG_LOG: Pring all GL calls on the console		
+		// #define SIO2_DEBUG_GL: Report GL errors (need SIO2_DEBUG_LOG)
+		// #define SIO2_DEBUG_AL: Report AL errors
+		
+		// Initialize SIO2 global variable
 		sio2Init( &tmp_argc, tmp_argv );
 		
+		// Initialize OpenGL ES
 		sio2InitGL();
-        
+		
+		// Initialize OpenAL
+		//sio2InitAL();
+		
+        // Initialize widget system
         sio2InitWidget();
         
+		// Create a window using the default sio2 structure handle
 		sio2->_SIO2window = sio2WindowInit();
-		
-		sio2WindowUpdateViewport( sio2->_SIO2window, 0, 0, backingWidth, backingHeight );
         
+        // Create a new scene, please take note that all the new
+		// resources handle created will be manage by this handle.
+		// If you want to have multiple scene you can initialize
+		// multiple SIO2resource structure and simply bind the
+		// on of your choice to the main sio2 handle that act
+		// like the global resource handle for sio2.
 		sio2->_SIO2resource = sio2ResourceInit( "default" );
         
+        // By default when SIO2_DEBUG_GL or SIO2_DEBUG_AL are enabled
+		// all the functions of SIO2 using any of the calls located
+		// in both framework will be tested for error at the end of 
+		// their respective functions. Uncomment the following line
+		// to create an OpenGL error and manually force the check.
+		// Feel free to disable theses define when you are compiling
+		// for release.
+		//
+		// glEnableClientState( GL_RGBA );
+		//
+		// Please refer to the debugging console for more information
+		// on what and where something get wrong.
+		
+        #ifdef SIO2_DEBUG_GL
+            sio2ErrorGL( __FILE__, __FUNCTION__, __LINE__ );
+        #endif
+        
+		// Create and attach a default camera to the
+		// SIO2 structure.
+		//sio2->_SIO2camera = sio2CameraInit( "default" );
+		
+		// Update the viewport with the current window size
+		sio2WindowUpdateViewport( sio2->_SIO2window, 0, 0, backingWidth, backingHeight );
+		
+		// Use the default camera value to setup the perpective
+		//sio2Perspective( sio2->_SIO2camera->fov, sio2->_SIO2window->scl->x / sio2->_SIO2window->scl->y, sio2->_SIO2camera->cstart, sio2->_SIO2camera->cend );
+        
+        // Attach a function to the render callback
 		sio2->_SIO2window->_SIO2windowrender = templateLoading;
 		
+		// Specify the function callback to use when the application quit.
 		sio2WindowShutdown( sio2->_SIO2window, templateShutdown );
 		
+		// Link the appropriate callbacks to handle tap, move and the
+		// accelerometer. Please take note that theses callbacks can
+		// be changed at any moment during runtime, making it easy to
+		// switch for a (eg:) GUI movement callback or a 3D camera
+		// movement callback.
+		//
+		// In addition uncomment the following definition #define SHOW_INFO at the top of
+		// template.mm in order to get info on the debugger console about the
+		// values sent to theses callbacks.
+		//
 		sio2->_SIO2window->_SIO2windowtap			= templateScreenTap;
 		sio2->_SIO2window->_SIO2windowtouchmove		= templateScreenTouchMove;
 		sio2->_SIO2window->_SIO2windowaccelerometer = templateScreenAccelerometer;

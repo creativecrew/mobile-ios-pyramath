@@ -20,28 +20,21 @@ Discover::GameController gameController;
 
 void templateRender( void )
 {
-	glMatrixMode( GL_MODELVIEW );
-	glLoadIdentity();
-    
-	glClear( GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT );
-    
     gameController.frameBegin();
     gameController.frameEnd();
 }
 
-void player_callback_tap_down( void *, void *, vec2 * ) {
-}
 
 void templateLoading( void )
 {
-    gameController.setSimulationEngine(sio2->_SIO2resource, sio2->_SIO2window);
-    gameController.load();
+    gameController.setSimulationEngine(sio2);
     
-    //gameController._cardViews.at(0)->_sio2WidgetCard->_SIO2widgettapdown = player_callback_tap_down;
-    
-    // Set (render loop) pointer to function.
-    sio2->_SIO2window->_SIO2windowrender = templateRender;
+    if(gameController.load()) {
+        // Set (render loop) pointer to function.
+        sio2->_SIO2window->_SIO2windowrender = templateRender;
+    }
 }
+
 
 void templateShutdown( void )
 {
@@ -89,6 +82,10 @@ void templateScreenTouchMove( void *_ptr )
 
 void templateScreenAccelerometer( void *_ptr )
 {
-
-
+#ifdef SHOW_INFO == 1
+	
+    printf("templateScreenAccelerometer >> x:%f y:%f z:%f\n", sio2->_SIO2window->accel->x,
+           sio2->_SIO2window->accel->y,
+           sio2->_SIO2window->accel->z );
+#endif
 }

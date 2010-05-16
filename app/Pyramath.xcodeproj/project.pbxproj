@@ -981,6 +981,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				AF06980B111EC58800C49375 /* Core Classes */,
 				AF42DCF711024803009EE8AE /* Model Classes */,
 				AF42DCF6110247ED009EE8AE /* Controller Classes */,
 				AF42DCF811024812009EE8AE /* View Classes */,
@@ -1031,6 +1032,13 @@
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AF06980B111EC58800C49375 /* Core Classes */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Core Classes";
 			sourceTree = "<group>";
 		};
 		AF42DCEF11024718009EE8AE /* Vendor Sources */ = {
